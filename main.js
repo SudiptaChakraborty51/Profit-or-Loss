@@ -24,14 +24,14 @@ function calculateProfitAndLoss(initial, quantity, current) {
             errorMessage.style.display = "none";
             outputMessage.style.display = "block";
             outputMessage.style.color = 'green';
-            outputMessage.innerText = `Hey, the Profit is ${profit} and the profit percentage is ${profitPercentage}%`;
+            outputMessage.innerText = `Hey, the Profit is ${profit.toFixed(2)} and the profit percentage is ${profitPercentage.toFixed(2)}%`;
         } else if (initial > current) {
             var loss = (initial - current) * quantity;
             var lossPercentage = (loss / (initial * quantity)) * 100;
             errorMessage.style.display = "none";
             outputMessage.style.display = "block";
             outputMessage.style.color = 'orange';
-            outputMessage.innerText = `Oops!, the Loss is ${loss} and the loss percentage is ${lossPercentage}%`;
+            outputMessage.innerText = `Oops!, the Loss is ${loss.toFixed(2)} and the loss percentage is ${lossPercentage.toFixed(2)}%`;
         } else {
             errorMessage.style.display = "none";
             outputMessage.style.display = "block";
