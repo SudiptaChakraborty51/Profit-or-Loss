@@ -4,6 +4,7 @@ const currentPrice = document.querySelector('#current-price');
 const tellMeButton = document.querySelector('#tell-me-button');
 const errorMessage = document.querySelector('.error');
 const outputMessage = document.querySelector('.output');
+const sadTheme = document.querySelector('.container');
 
 tellMeButton.addEventListener('click', function tellMeHandler() {
     var ip = Number(initialPrice.value);
@@ -32,6 +33,9 @@ function calculateProfitAndLoss(initial, quantity, current) {
             outputMessage.style.display = "block";
             outputMessage.style.color = 'orange';
             outputMessage.innerText = `Oops!, the Loss is ${loss.toFixed(2)} and the loss percentage is ${lossPercentage.toFixed(2)}%`;
+            if(lossPercentage > 50){
+                sadTheme.style.backgroundColor = '#e2e8f0';
+            }
         } else {
             errorMessage.style.display = "none";
             outputMessage.style.display = "block";
