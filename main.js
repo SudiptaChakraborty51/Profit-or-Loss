@@ -34,7 +34,7 @@ function calculateProfitAndLoss(initial, quantity, current) {
             outputMessage.style.color = 'orange';
             outputMessage.innerText = `Oops!, the Loss is ${loss.toFixed(2)} and the loss percentage is ${lossPercentage.toFixed(2)}%`;
             if(lossPercentage > 50){
-                sadTheme.style.backgroundColor = '#e2e8f0';
+                sadTheme.style.backgroundColor = '#f7e5da';
             }
         } else {
             errorMessage.style.display = "none";
