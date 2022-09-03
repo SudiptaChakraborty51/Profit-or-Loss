@@ -26,7 +26,7 @@ function calculateProfitAndLoss(initial, quantity, current) {
                 errorMessage.style.display = "none";
                 outputMessage.style.display = "block";
                 outputMessage.style.color = 'green';
-                outputMessage.innerText = `Hey, the Profit is ${profit.toFixed(2)} and the profit percentage is ${profitPercentage.toFixed(2)}%`;
+                outputMessage.innerText = `Hey, the Profit is ${profit.toFixed(2)} and the profit percentage is ${profitPercentage.toFixed(2)}% 😇`;
                 sadTheme.style.backgroundColor = "#dcfce7"
             } else if (initial > current) {
                 var loss = (initial - current) * quantity;
@@ -34,8 +34,10 @@ function calculateProfitAndLoss(initial, quantity, current) {
                 errorMessage.style.display = "none";
                 outputMessage.style.display = "block";
                 outputMessage.style.color = 'orange';
-                outputMessage.innerText = `Oops!, the Loss is ${loss.toFixed(2)} and the loss percentage is ${lossPercentage.toFixed(2)}%`;
-                sadTheme.style.backgroundColor = '#ffedd5';
+                outputMessage.innerText = `Oops!, the Loss is ${loss.toFixed(2)} and the loss percentage is ${lossPercentage.toFixed(2)}% 😥`;
+                if(lossPercentage>50){
+                    sadTheme.style.backgroundColor = '#ffedd5';
+                }
             } else {
                 errorMessage.style.display = "none";
                 outputMessage.style.display = "block";
