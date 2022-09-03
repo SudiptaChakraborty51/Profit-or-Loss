@@ -19,28 +19,34 @@ function calculateProfitAndLoss(initial, quantity, current) {
         errorMessage.style.display = "block";
         errorMessage.innerText = "Please fill out all the required fields!";
     } else {
-        if (initial < current) {
-            var profit = (current - initial) * quantity;
-            var profitPercentage = (profit / (initial * quantity)) * 100;
-            errorMessage.style.display = "none";
-            outputMessage.style.display = "block";
-            outputMessage.style.color = 'green';
-            outputMessage.innerText = `Hey, the Profit is ${profit.toFixed(2)} and the profit percentage is ${profitPercentage.toFixed(2)}%`;
-            sadTheme.style.backgroundColor = "#dcfce7"
-        } else if (initial > current) {
-            var loss = (initial - current) * quantity;
-            var lossPercentage = (loss / (initial * quantity)) * 100;
-            errorMessage.style.display = "none";
-            outputMessage.style.display = "block";
-            outputMessage.style.color = 'orange';
-            outputMessage.innerText = `Oops!, the Loss is ${loss.toFixed(2)} and the loss percentage is ${lossPercentage.toFixed(2)}%`;
-            sadTheme.style.backgroundColor = '#ffedd5';
+        if(initial>0 && quantity>0 && current>0){
+            if (initial < current) {
+                var profit = (current - initial) * quantity;
+                var profitPercentage = (profit / (initial * quantity)) * 100;
+                errorMessage.style.display = "none";
+                outputMessage.style.display = "block";
+                outputMessage.style.color = 'green';
+                outputMessage.innerText = `Hey, the Profit is ${profit.toFixed(2)} and the profit percentage is ${profitPercentage.toFixed(2)}%`;
+                sadTheme.style.backgroundColor = "#dcfce7"
+            } else if (initial > current) {
+                var loss = (initial - current) * quantity;
+                var lossPercentage = (loss / (initial * quantity)) * 100;
+                errorMessage.style.display = "none";
+                outputMessage.style.display = "block";
+                outputMessage.style.color = 'orange';
+                outputMessage.innerText = `Oops!, the Loss is ${loss.toFixed(2)} and the loss percentage is ${lossPercentage.toFixed(2)}%`;
+                sadTheme.style.backgroundColor = '#ffedd5';
+            } else {
+                errorMessage.style.display = "none";
+                outputMessage.style.display = "block";
+                outputMessage.style.color = 'blue';
+                outputMessage.innerText = "No pain no gain and no gain no pain :)";
+                sadTheme.style.backgroundColor = "white";
+            }
         } else {
-            errorMessage.style.display = "none";
-            outputMessage.style.display = "block";
-            outputMessage.style.color = 'blue';
-            outputMessage.innerText = "No pain no gain and no gain no pain :)";
-            sadTheme.style.backgroundColor = "white";
+            outputMessage.style.display = "none";
+            errorMessage.style.display = "block";
+            errorMessage.innerText = "Please enter positive values!";
         }
     }
 }
