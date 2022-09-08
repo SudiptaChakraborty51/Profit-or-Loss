@@ -18,3 +18,8 @@
  ### bonus
  - use right emoji or graphics to show profit/loss
  - can you change the entire theme of the app to sad if someone has lost more than 50%?
+ 
+ #### Tech-Stack
+ 1. HTML5
+ 2. CSS3
+ 3. JavaScript
